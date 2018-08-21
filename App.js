@@ -1,6 +1,17 @@
 import React from 'react';
 import { StyleSheet, Text, View } from 'react-native';
-import {RkButton} from 'react-native-ui-kitten';
+import {RkButton,RkTheme} from 'react-native-ui-kitten';
+
+let accent = '#ed1c4d';
+
+RkTheme.setType('RkButton', 'accent', {
+  container: {
+    backgroundColor: accent
+  },
+  content: {
+    color: 'white'
+  }
+});
 
 export default class App extends React.Component {
   render() {
@@ -10,7 +21,9 @@ export default class App extends React.Component {
         <Text>Changes you make will automatically reload.</Text>
         <Text>Shake your phone to open the developer menu.</Text>
         <RkButton rkType='outline small'>
-  Say Hello</RkButton>
+        Say Hello</RkButton>
+        <RkButton rkType='accent'>
+        Say Hello</RkButton>
        
 
       </View>
