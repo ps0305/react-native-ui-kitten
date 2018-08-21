@@ -10,6 +10,21 @@ RkTheme.setType('RkButton', 'accent', {
   },
   content: {
     color: 'white'
+  },
+  
+});
+
+let Values = {
+  fontSize: 15
+};
+RkTheme.setTheme({
+  fonts: {
+    sizes: {
+      base: Values.fontSize, 
+      small: Values.fontSize * 0.8,
+      medium: Values.fontSize,
+      large: Values.fontSize * 1.2,
+    }
   }
 });
 
@@ -38,4 +53,5 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
 });
