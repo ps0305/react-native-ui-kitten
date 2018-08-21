@@ -9,32 +9,50 @@ import {
 } from 'react-native';
 import {
   RkCard,
+  RkTheme,
   RkText,
-  RkStyleSheet
+  RkStyleSheet,
+  RkChoice
 } from 'react-native-ui-kitten';
 
+RkTheme.setType('RkChoice', 'redCheckMarkSelected', {
+  backgroundColor: 'transparent',
+  inner: {
+    tintColor: 'red',
+  }
+});
 
-let accent = '#ed1c4d';
+RkTheme.setType('RkChoice', 'magentaCyan', {
+  inner: {
+    tintColor: 'magenta',
+  }
+});
 
+RkTheme.setType('RkChoice', 'magentaCyanSelected', {
+  inner: {
+    tintColor: 'cyan',
+  }
+});
+
+RkTheme.setType('RkChoice', 'starSelected', {
+  backgroundColor: 'transparent',
+  inner: {
+    imageSource: () => require('./asset/pic/Unknown.png'),
+    tintColor: 'green'
+  }
+});
 
 
 export default class App extends React.Component {
   render() {
     return (
-      <ScrollView>
-        <RkCard>
-  <View rkCardHeader>
-    <Text>Header</Text>
-  </View>
-  <Image rkCardImg source={require('./asset/pic/Unknown.png')}/>
-  <View rkCardContent>
-    <Text> quick brown fox jumps over the lazy dog</Text>
-  </View>
-  <View rkCardFooter>
-    <Text>Footer</Text>
-  </View>
-</RkCard>
-      </ScrollView>
+      <View>
+        <RkChoice rkType='redCheckMark'/>
+<RkChoice selected rkType='posNeg magentaCyan'/>
+<RkChoice disabled rkType='star'/>
+<RkChoice disabled selected rkType='radio star'/>
+      </View>
+      
       
     );
   }
